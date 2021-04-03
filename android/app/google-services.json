@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "887790761786",
+    "project_id": "fir-auth-b8dce",
+    "storage_bucket": "fir-auth-b8dce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887790761786:android:fdda011328221a0afd4203",
+        "android_client_info": {
+          "package_name": "com.example.cis_health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887790761786-n8vd1evkatk6j6ta5nmg69ftfpqlmr7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cis_health",
+            "certificate_hash": "ad43e02ba2894260fae22fc8ab842d1496c3cc41"
+          }
+        },
+        {
+          "client_id": "887790761786-mid3rb5fs4nu20uipa4vvs1vg940kenh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_H8IeO3M1DBqK0aU0Xj4hLqepO7wbtCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887790761786-mid3rb5fs4nu20uipa4vvs1vg940kenh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

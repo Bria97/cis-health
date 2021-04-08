@@ -10,4 +10,5 @@ final List<String> symptoms = [
   'Congestion'
   'Nausea or vomiting'
   'Diarrhea'
+  'None of Above'
 ];

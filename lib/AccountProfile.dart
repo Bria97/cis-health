@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cis_health/Settings.dart';
 
-// class AccountProfile extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title:"Account Profile",
-//       home: AccountProfile(),
-//     );
-//   }
-// }
-
 
 
 class Account extends StatefulWidget {
   @override
   _AccountProfile createState() => _AccountProfile();
 }
+
 
 
 class _AccountProfile extends State<Account> {
@@ -31,7 +21,7 @@ class _AccountProfile extends State<Account> {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.orange
+            color: Colors.green
           ),
           onPressed: () {},
         ),
@@ -39,7 +29,7 @@ class _AccountProfile extends State<Account> {
           IconButton(
             icon: Icon(
               Icons.settings,
-              color: Colors.orange,
+              color: Colors.green,
             ),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
@@ -81,11 +71,13 @@ class _AccountProfile extends State<Account> {
                                 offset: Offset(0, 10))
                           ],
                           shape: BoxShape.circle,
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                "https://images.pexels.com/photos/3307758/pexels-photo-3307758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250",
-                              ))),
+                          // image: DecorationImage(
+                          //     fit: BoxFit.cover,
+                          //     // image: NetworkImage(
+                          //     //   "https://images.pexels.com/photos/3307758/pexels-photo-3307758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250",
+                          //     // )
+                          //     )
+                              ),
                     ),
                     Positioned(
                         bottom: 0,
@@ -112,10 +104,10 @@ class _AccountProfile extends State<Account> {
               SizedBox(
                 height: 35,
               ),
-              buildTextField("Full Name", "Dor Alex", false),
-              buildTextField("E-mail", "alexd@gmail.com", false),
+              buildTextField("Full Name", "Bria Hargrove", false),
+              buildTextField("E-mail", "bria2.hargrove@gmail.com", false),
               buildTextField("Password", "********", true),
-              buildTextField("Location", "TLV, Israel", false),
+              // buildTextField("Location", "TLV, Israel", false),
               SizedBox(
                 height: 35,
               ),
@@ -123,9 +115,7 @@ class _AccountProfile extends State<Account> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   OutlineButton(
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                    padding: const EdgeInsets.only(left:40,right:40,top:20,bottom:20),
                     onPressed: () {},
                     child: Text("CANCEL",
                         style: TextStyle(
@@ -136,10 +126,8 @@ class _AccountProfile extends State<Account> {
                   RaisedButton(
                     onPressed: () {},
                     color: Colors.green,
-                    padding: EdgeInsets.symmetric(horizontal: 50),
+                    padding: const EdgeInsets.only(left:40,right:40,top:20,bottom:20),
                     elevation: 2,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
                     child: Text(
                       "SAVE",
                       style: TextStyle(

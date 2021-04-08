@@ -8,6 +8,8 @@ import 'package:cis_health/Homescreen.dart';
 import 'package:cis_health/AccountProfile.dart';
 import 'package:cis_health/Settings.dart';
 
+import 'AccountProfile.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

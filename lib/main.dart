@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         '/Start'  : (context) => Start(),
         '/Homepage' : (context) => Homepage(),
         '/Homescreen' : (context) => Homescreen(),
-        '/Account' : (context) => AccountProfile(),
+        '/Account' : (context) => Account(),
         '/Settings' : (context) => Settings()
       },
       

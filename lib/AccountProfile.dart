@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:cis_health/Settings.dart';
 
-class AccountProfile extends StatelessWidget {
+// class AccountProfile extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title:"Account Profile",
+//       home: AccountProfile(),
+//     );
+//   }
+// }
+
+
+
+class Account extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title:"Account Profile",
-      home: AccountProfile(),
-    );
-  }
+  _AccountProfile createState() => _AccountProfile();
 }
 
-class EditProfilePage extends StatefulWidget {
-  @override
-  _EditProfilePageState createState() => _EditProfilePageState();
-}
 
-class _EditProfilePageState extends State<EditProfilePage> {
+class _AccountProfile extends State<Account> {
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.orange,
+            color: Colors.orange
           ),
           onPressed: () {},
         ),

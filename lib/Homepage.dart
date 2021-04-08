@@ -100,7 +100,7 @@ super.initState();
               ),),
             ),
 
-            const SizedBox(height: 130.0),
+            const SizedBox(height: 50.0),
            RaisedButton(
             // mainAxisAlignment : MainAxisAlignment.center,
             onPressed: signOut,
@@ -110,10 +110,10 @@ super.initState();
              color: Colors.white)),
              color: Colors.green[800]
              ),
-            const SizedBox(height: 130.0),
+            const SizedBox(height: 20.0),
            RaisedButton(
             // mainAxisAlignment : MainAxisAlignment.center,
-            onPressed: navigateToHomescreen(),
+            onPressed: () => navigateToHomescreen(),
             padding: const EdgeInsets.fromLTRB(35,20,35,20),
             child: const Text('Continue',
              style: TextStyle(fontSize: 11,

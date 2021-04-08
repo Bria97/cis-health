@@ -108,7 +108,7 @@ navigateToAccountProfile()async
                    Icons.account_circle_outlined,
                    color: Colors.black,
                    ),
-                    onPressed: navigateToAccountProfile() 
+                    onPressed: () => navigateToAccountProfile() 
                     ),
              ],
       ),

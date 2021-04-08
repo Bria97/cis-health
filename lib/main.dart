@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cis_health/SignUp.dart';
 import 'package:cis_health/Homescreen.dart';
+import 'package:cis_health/AccountProfile.dart';
+import 'package:cis_health/Settings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +39,9 @@ class MyApp extends StatelessWidget {
         '/SignUp'  : (context) => SignUp(),
         '/Start'  : (context) => Start(),
         '/Homepage' : (context) => Homepage(),
-        '/Homescreen' : (context) => Homescreen()
+        '/Homescreen' : (context) => Homescreen(),
+        '/Account' : (context) => AccountProfile(),
+        '/Settings' : (context) => Settings()
       },
       
     );

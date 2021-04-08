@@ -9,5 +9,5 @@ final List<String> symptoms = [
   'Sore throat'
   'Congestion'
   'Nausea or vomiting'
-  'Diarrea'
+  'Diarrhea'
 ];

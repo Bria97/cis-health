@@ -1,10 +1,57 @@
+import 'package:cis_health/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cis_health/utlis.dart';
 import 'package:cis_health/Widgets/bottom_nav_widget.dart';
 import 'package:cis_health/Widgets/slider_widget.dart';
-import 'package:cis_health/Homepage.dart';
 import 'package:cis_health/Widgets/checklist.dart';
+import 'package:provider/provider.dart';
+import 'package:cis_health/Widgets/checklist.dart';
+import 'package:cis_health/Widgets/notifiers.dart';
+
+void main() {
+  runApp(MultiProvider(
+    providers: [
+    ChangeNotifierProvider<MultipleNotifier>(
+      create: (_) => MultipleNotifier([]),),
+
+  ],
+  child: MyApp(),
+  ));
+}
+_showMultipleChoiceDialog(BuildContext context) => showDialog(
+      context: context,
+      builder: (context) {
+        final _multipleNotifier = Provider.of<MultipleNotifier>(context);
+        return AlertDialog(
+          title: Text('Which symptoms do you posses?'),
+          content: SingleChildScrollView(
+            child: Container(
+                width: double.infinity,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: symptoms
+                      .map((e) => CheckboxListTile(
+                            title: Text(e),
+                            onChanged: (value) {
+                              value
+                                  ? _multipleNotifier.addItem(e)
+                                  : _multipleNotifier.removeItem(e);
+                            },
+                            value: _multipleNotifier.isHaveItem(e),
+                          ))
+                      .toList(),
+                )),
+          ),
+          actions: [
+            FlatButton(
+              child: Text('Complete'),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          ],
+        );
+      });
+
 
 
 class Homescreen extends StatefulWidget {
@@ -14,6 +61,8 @@ class Homescreen extends StatefulWidget {
 
 class _HomescreenState extends State<Homescreen> {
 
+  
+
 
  navigateToHomescreen()async
 {
@@ -22,10 +71,19 @@ class _HomescreenState extends State<Homescreen> {
   }); 
 }
 
+navigateToAccountProfile()async
+{
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+          Navigator.pushReplacementNamed(context, '/Account');
+  }); 
+}
+
 @override
   Widget build(BuildContext context) {
     return Scaffold(
 
+      
+      
 
       backgroundColor: Color(0xfff28500),
       bottomNavigationBar: BottomNavBarWidget(),
@@ -50,7 +108,7 @@ class _HomescreenState extends State<Homescreen> {
                    Icons.account_circle_outlined,
                    color: Colors.black,
                    ),
-                    onPressed: () {}
+                    onPressed: navigateToAccountProfile() 
                     ),
              ],
       ),
@@ -83,119 +141,21 @@ class _HomescreenState extends State<Homescreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Column(
-                //   crossAxisAlignment: CrossAxisAlignment.center,
-                //   children: [
-                //     Text(
-                //       'Current humidity',
-                //       style: TextStyle(
-                //         color: Colors.grey.withAlpha(150),
-                //       ),
-                //     ),
-                //     const SizedBox(
-                //       height: 10,
-                //     ),
-                //     Text(
-                //       '55%',
-                //       style: TextStyle(
-                //         fontSize: 24,
-                //         fontWeight: FontWeight.w600,
-                //       ),
-                //     ),
-                //   ],
-                // ),
-
-                // Column(
-                //   crossAxisAlignment: CrossAxisAlignment.center,
-                //   children: [
-                //     Text(
-                //       'Current temp.',
-                //       style: TextStyle(
-                //         color: Colors.grey.withAlpha(150),
-                //       ),
-                //     ),
-                //     const SizedBox(
-                //       height: 10,
-                //     ),
-                //     Text(
-                //       '25°',
-                //       style: TextStyle(
-                //         fontSize: 24,
-                //         fontWeight: FontWeight.w600,
-                //       ),
-                //     ),
-                //   ],
-                // )
-              ],
             ),
+
             const SizedBox(
               height: 35,
             ),
             
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: ElevatedButton(
-            //         onPressed: () {},
-            //         child: Text(
-            //           'Automatic',
-            //           style: TextStyle(color: Colors.black, fontSize: 16),
-            //         ),
-            //         style: ButtonStyle(
-            //           elevation: MaterialStateProperty.all(0),
-            //           backgroundColor: MaterialStateProperty.all(Colors.white),
-            //           padding: MaterialStateProperty.all(
-            //             const EdgeInsets.symmetric(
-            //                 horizontal: 24, vertical: 16),
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 20,
-            //     ),
-            //     ElevatedButton(
-            //       onPressed: () {},
-            //       child: Icon(
-            //         Icons.adjust,
-            //         color: Colors.black.withAlpha(175),
-            //       ),
-            //       style: ButtonStyle(
-            //         elevation: MaterialStateProperty.all(0),
-            //         backgroundColor: MaterialStateProperty.all(Colors.white),
-            //         padding: MaterialStateProperty.all(
-            //           const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-            //         ),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 20,
-            //     ),
-            //     ElevatedButton(
-            //       onPressed: () {},
-            //       child: Icon(
-            //         Icons.airplay,
-            //         color: Colors.black.withAlpha(175),
-            //       ),
-            //       style: ButtonStyle(
-            //         elevation: MaterialStateProperty.all(0),
-            //         backgroundColor: MaterialStateProperty.all(Colors.white),
-            //         padding: MaterialStateProperty.all(
-            //           const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
           
           RaisedButton(
             // mainAxisAlignment : MainAxisAlignment.center,
-            onPressed: () => _showMultipleChoiceDialog {
-              showDialog(
-                context: context, 
-                builder: (BuildContext context) => _(context),)
-            },
+            onPressed: () => {},
+            // _showMultipleChoiceDialog {
+            //   showDialog(
+            //     context: context, 
+            //     builder: (BuildContext context) => _(context))
+            // },
             padding: const EdgeInsets.only(left:30,right:30,top:20,bottom:20),
             child: const Text('Symptom Checklist',
              style: TextStyle(fontSize: 20,
@@ -208,8 +168,10 @@ class _HomescreenState extends State<Homescreen> {
             ),
 
           ], 
+          
         ),
       ),
+      
     );
   }
 }

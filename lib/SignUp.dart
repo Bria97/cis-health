@@ -1,3 +1,4 @@
+import 'package:cis_health/database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -46,6 +47,9 @@ signUp()async{
        UserCredential user = await _auth.createUserWithEmailAndPassword(email: _email, password: _password);
        if(user!= null) 
        {
+          Data db = Data();
+          print(user.user.uid);
+          db.Name(_fname, _lname, user.user.uid);
           await _auth.currentUser.updateProfile(displayName: _fname);
           
           navigateToHomepage();

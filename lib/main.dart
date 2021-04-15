@@ -7,13 +7,23 @@ import 'package:cis_health/SignUp.dart';
 import 'package:cis_health/Homescreen.dart';
 import 'package:cis_health/AccountProfile.dart';
 import 'package:cis_health/Settings.dart';
-
 import 'AccountProfile.dart';
+import 'package:provider/provider.dart';
+import 'package:cis_health/Widgets/checklist.dart';
+import 'package:cis_health/Widgets/notifiers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(MultiProvider(
+    providers: [
+    ChangeNotifierProvider<MultipleNotifier>(
+      create: (_) => MultipleNotifier([]),),
+
+  ],
+  child: MyApp(),
+  ));
+  // runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

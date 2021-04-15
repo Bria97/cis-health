@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 class Data {
-  FirebaseFirestore database = FirebaseFirestore.instance;
+  FirebaseFirestore database;
 
   Data () {
     database = FirebaseFirestore.instance;

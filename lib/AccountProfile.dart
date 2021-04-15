@@ -104,8 +104,8 @@ class _AccountProfile extends State<Account> {
               SizedBox(
                 height: 35,
               ),
-              buildTextField("Full Name", "Bria Hargrove", false),
-              buildTextField("E-mail", "bria2.hargrove@gmail.com", false),
+              buildTextField("Full Name", "John Doe", false),
+              buildTextField("E-mail", "JohnDoe@gmail.com", false),
               buildTextField("Password", "********", true),
               // buildTextField("Location", "TLV, Israel", false),
               SizedBox(

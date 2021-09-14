@@ -1,10 +1,12 @@
-# cis_health
+# Mobile Application Name: CIS Health
+# Created by: Bria Hargrove
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## What is CIS Health?
+
+CIS (Computer and Information Sciences) Health is a mobile application used to montior and prevent the spread of COVID-19.
+
 
 A few resources to get you started if this is your first Flutter project:
 
